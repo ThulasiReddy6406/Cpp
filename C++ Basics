@@ -1,1 +1,71 @@
+// TOPICS COVERD IN THIS CODE IS 
 
+
+#include<iostream>
+using namespace std;
+
+
+class Student{
+    private:
+    string mobno;
+    public:
+
+    string name;
+    string prn;
+    string branch;
+    string div;
+    float marks;
+
+    Student(string name,string prn,string branch,string div,float marks){
+        this->name = name;
+        this->prn = prn;
+        this->branch = branch;
+        this->div = div;
+        this->marks = marks;
+    };
+    Student(Student &copyobj){
+        this->name = copyobj.name;
+        this->prn = copyobj.prn;
+        this->branch = copyobj.branch;
+        this->div =copyobj.div;
+        this->marks =copyobj.marks;
+    }
+    ~Student(){};
+    void setmob(string mb){
+        mobno = mb;
+    }
+    void getmb(){
+        cout<<"| MOBILE NO :- "<<mobno<<endl;
+    }
+    void info(){
+    cout<<"-----------"<<endl;
+
+    cout<<"| Name   :-"<<name<<endl;
+    cout<<"| PRN    :-"<<prn<<endl;
+    cout<<"| Branch :-"<<branch<<endl;
+    cout<<"| Div    :-"<<div<<endl;
+    cout<<"| Marks  :-"<<marks<<endl;
+    
+
+    cout<<"-----------"<<endl;
+    };
+};
+
+int main(){
+    cout<<"COVERD TOPICS :- \n 1.CLASS , 2.OBJECTS , 3.CONSTRUCTOR , 4.PUBLIC & PRIVATE , 5.DESTRUCTOR , 6. COPY AND PARAMETARIZED CONSTRUCTOR ... ";
+    Student s1("Thulasi Nadha Reddy","230105231091","cse","A",800);
+    Student s2("Rakshitha ishwar patel","230105131288","cse","A",1000);
+    Student s3("jay khothawade","230105131234","cse","A",600);
+    // s1.info();
+    Student s4 = s1;
+    s4.info();
+    s1.setmob("8688145058");
+    s1.getmb();
+    s2.info();
+    s2.setmob("9098394499");
+    s2.getmb();
+    s3.info();
+    s3.setmob("86881454538");
+    s3.getmb();
+
+}
